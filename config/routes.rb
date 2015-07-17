@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-resources :users do
-  resources :subs, only:[:edit, :update]
-end
+resources :users
+
+
 resource :session
-resources :subs, except: [:destroy, :edit, :update]
+resources :subs, except: [:destroy] do
+  resources :posts, only: [:show, :new, :create]
+end
+
+resources :posts, except: [:index, :destroy, :show, :new, :create]
 end

@@ -1,5 +1,5 @@
 <h1>Edit this sub<h1>
-  <form action="<%=subs_url(@sub)%>" method = "post">
+  <form action="<%=sub_url(@sub)%>" method = "post">
     <input type="hidden" name="_method" value="patch">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
     <label for="title">Title</label>

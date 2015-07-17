@@ -7,7 +7,15 @@ class User < ActiveRecord::Base
   has_many(
     :subs,
     class_name: :Sub,
-    foreign_key: :moderator_id
+    foreign_key: :moderator_id,
+    dependent: :destroy
+  )
+
+  has_many(
+    :posts,
+    class_name: :Post,
+    foreign_key: :author_id,
+    dependent: :destroy
   )
 
   attr_reader :password
