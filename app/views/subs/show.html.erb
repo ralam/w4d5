@@ -3,4 +3,4 @@
 <%=button_to "Edit Sub", edit_sub_url, method: :get %>
 <%=button_to "Make new post", new_sub_post_url(@sub), method: :get %>
 
-<%= render 'posts/show', post: @posts %>
+<%= render 'posts/show', post: @posts, sub_id: @sub.id %>
